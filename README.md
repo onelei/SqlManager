@@ -41,7 +41,7 @@ Sqlite是是一个SQL数据库引擎。
 新建SqliteConnection，SqliteCommand，SqliteDataReader三个变量。
 
 ```C#
-  		/// <summary>
+  	/// <summary>
         /// 数据库连接
         /// </summary>
         private SqliteConnection SqlConnection;
@@ -58,7 +58,7 @@ Sqlite是是一个SQL数据库引擎。
 建立数据库连接
 
 ```C#
-		/// <summary>
+	/// <summary>
         /// 建立数据库连接
         /// </summary>
         public SqlData()
@@ -79,7 +79,7 @@ Sqlite是是一个SQL数据库引擎。
 执行查询语句
 
 ```C#
-		/// <summary>
+	/// <summary>
         /// 执行SQL语句
         /// </summary>
         /// <param name="command"></param>
@@ -98,7 +98,7 @@ Sqlite是是一个SQL数据库引擎。
 创建表格
 
 ```C#
-		/// <summary>
+	/// <summary>
         /// 创建表格
         /// </summary>
         /// <param name="col"></param>
@@ -136,7 +136,7 @@ Sqlite是是一个SQL数据库引擎。
  插入
 
 ```C#
-		/// <summary>
+	/// <summary>
         /// 插入
         /// </summary>
         /// <param name="key"></param>
@@ -169,7 +169,7 @@ Sqlite是是一个SQL数据库引擎。
 删除
 
 ```C#
-		/// <summary>
+	/// <summary>
         /// 删除
         /// </summary>
         /// <param name="key"></param>
@@ -192,7 +192,7 @@ Sqlite是是一个SQL数据库引擎。
 更新
 
 ```C#
-		/// <summary>
+	/// <summary>
         /// 更新
         /// </summary>
         /// <param name="key"></param>
@@ -250,7 +250,7 @@ Sqlite是是一个SQL数据库引擎。
 表格是否存在
 
 ```C#
-		/// <summary>
+	/// <summary>
         /// 表格是否存在
         /// </summary>
         /// <param name="tableName"></param>
@@ -296,7 +296,7 @@ private Hashtable dataHashTable = new Hashtable();
 ![1568295147722](https://github.com/onelei/ThreadFileWriter/blob/master/Images/1568295147722.png)
 
 ```C#
-   		private enum EDataType
+   	private enum EDataType
         {
             String = 1,
             Int = 2,
@@ -308,7 +308,7 @@ private Hashtable dataHashTable = new Hashtable();
 加载表格
 
 ```C#
-		public void LoadData()
+	public void LoadData()
         {
             if (!ExistTable(tableName))
             {
@@ -350,7 +350,7 @@ private Hashtable dataHashTable = new Hashtable();
 设置Value
 
 ```C#
-		public void SetValue_String(string key, string value)
+	public void SetValue_String(string key, string value)
         {
             if (ContainsKey(key))
             {
@@ -367,7 +367,7 @@ private Hashtable dataHashTable = new Hashtable();
 删除Value
 
 ```C#
-		public void DeleteValue(string key)
+	public void DeleteValue(string key)
         {
             if (dataHashTable.ContainsKey(key))
             {
@@ -380,7 +380,7 @@ private Hashtable dataHashTable = new Hashtable();
 关闭数据库
 
 ```C#
- 		/// <summary>
+ 	/// <summary>
         /// 关闭数据库
         /// </summary>
         public void Close()
