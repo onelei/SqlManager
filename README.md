@@ -2,7 +2,7 @@
 
 ## 是什么
 
-Sqlite是是一个SQL数据库引擎。
+Sqlite是一个SQL数据库引擎。
 
 ## 为什么
 
@@ -26,22 +26,22 @@ Sqlite是是一个SQL数据库引擎。
 
 在Sqlite的官网下载对应的版本即可“ https://www.sqlite.org/download.html ”
 
-![1568293365829](https://github.com/onelei/ThreadFileWriter/blob/master/Images/1568293365829.png)
+![1568293365829](https://github.com/onelei/SqlManager/blob/master/Images/1568293365829.png)
 
 #### 实现
 
 下载一个数据库查看软件Navicat Premium，通过它创建一个数据库database.db，将其放入Unity的“StreamingAssets”目录下。
 
-![1568294082437](https://github.com/onelei/ThreadFileWriter/blob/master/Images/1568294082437.png)
+![1568294082437](https://github.com/onelei/SqlManager/blob/master/Images/1568294082437.png)
 
-![1568293982940](https://github.com/onelei/ThreadFileWriter/blob/master/Images/1568293982940.png)
+![1568293982940](https://github.com/onelei/SqlManager/blob/master/Images/1568293982940.png)
 
 数据库一般是增删改查这几项功能。
 
 新建SqliteConnection，SqliteCommand，SqliteDataReader三个变量。
 
 ```C#
-  		/// <summary>
+  	/// <summary>
         /// 数据库连接
         /// </summary>
         private SqliteConnection SqlConnection;
@@ -58,7 +58,7 @@ Sqlite是是一个SQL数据库引擎。
 建立数据库连接
 
 ```C#
-		/// <summary>
+	/// <summary>
         /// 建立数据库连接
         /// </summary>
         public SqlData()
@@ -79,7 +79,7 @@ Sqlite是是一个SQL数据库引擎。
 执行查询语句
 
 ```C#
-		/// <summary>
+	/// <summary>
         /// 执行SQL语句
         /// </summary>
         /// <param name="command"></param>
@@ -98,7 +98,7 @@ Sqlite是是一个SQL数据库引擎。
 创建表格
 
 ```C#
-		/// <summary>
+	/// <summary>
         /// 创建表格
         /// </summary>
         /// <param name="col"></param>
@@ -136,7 +136,7 @@ Sqlite是是一个SQL数据库引擎。
  插入
 
 ```C#
-		/// <summary>
+	/// <summary>
         /// 插入
         /// </summary>
         /// <param name="key"></param>
@@ -169,7 +169,7 @@ Sqlite是是一个SQL数据库引擎。
 删除
 
 ```C#
-		/// <summary>
+	/// <summary>
         /// 删除
         /// </summary>
         /// <param name="key"></param>
@@ -192,7 +192,7 @@ Sqlite是是一个SQL数据库引擎。
 更新
 
 ```C#
-		/// <summary>
+	/// <summary>
         /// 更新
         /// </summary>
         /// <param name="key"></param>
@@ -250,7 +250,7 @@ Sqlite是是一个SQL数据库引擎。
 表格是否存在
 
 ```C#
-		/// <summary>
+	/// <summary>
         /// 表格是否存在
         /// </summary>
         /// <param name="tableName"></param>
@@ -293,10 +293,10 @@ private Hashtable dataHashTable = new Hashtable();
 
 我们存储数据的时候不一定都是String类型，同时还需要Int，Long，Float等类型，因此需要预先设置好数据库的列名，同时还需要一个数据类型字段来表明存储的数据类型，具体如下
 
-![1568295147722](https://github.com/onelei/ThreadFileWriter/blob/master/Images/1568295147722.png)
+![1568295147722](https://github.com/onelei/SqlManager/blob/master/Images/1568295147722.png)
 
 ```C#
-   		private enum EDataType
+   	private enum EDataType
         {
             String = 1,
             Int = 2,
@@ -308,7 +308,7 @@ private Hashtable dataHashTable = new Hashtable();
 加载表格
 
 ```C#
-		public void LoadData()
+	public void LoadData()
         {
             if (!ExistTable(tableName))
             {
@@ -350,7 +350,7 @@ private Hashtable dataHashTable = new Hashtable();
 设置Value
 
 ```C#
-		public void SetValue_String(string key, string value)
+	public void SetValue_String(string key, string value)
         {
             if (ContainsKey(key))
             {
@@ -367,7 +367,7 @@ private Hashtable dataHashTable = new Hashtable();
 删除Value
 
 ```C#
-		public void DeleteValue(string key)
+	public void DeleteValue(string key)
         {
             if (dataHashTable.ContainsKey(key))
             {
@@ -380,7 +380,7 @@ private Hashtable dataHashTable = new Hashtable();
 关闭数据库
 
 ```C#
- 		/// <summary>
+ 	/// <summary>
         /// 关闭数据库
         /// </summary>
         public void Close()
@@ -543,7 +543,7 @@ namespace SQL
 
 由于使用的时候需要调用的函数名太长，可以新建一个工具类封装一下
 
-![1568295539751](https://github.com/onelei/ThreadFileWriter/blob/master/Images/1568295539751.png)
+![1568295539751](https://github.com/onelei/SqlManager/blob/master/Images/1568295539751.png)
 
 新建一个测试函数
 
@@ -583,10 +583,10 @@ namespace SQL
 
 运行Unity，发现表格数据已经生成
 
-![1568295690452](https://github.com/onelei/ThreadFileWriter/blob/master/Images/1568295690452.png)
+![1568295690452](https://github.com/onelei/SqlManager/blob/master/Images/1568295690452.png)
 
 同时通过C#，也将数据读取了出来
 
-![1568295883460](https://github.com/onelei/ThreadFileWriter/blob/master/Images/1568295883460.png)
+![1568295883460](https://github.com/onelei/SqlManager/blob/master/Images/1568295883460.png)
 
 具体源码可以通过Github查看： https://github.com/onelei/SqlManager
