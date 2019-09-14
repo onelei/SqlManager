@@ -6,6 +6,7 @@ namespace SQL
     public enum ESqlType
     {
         Player,
+        Common,
     }
 
     public class SqlManager
@@ -29,8 +30,10 @@ namespace SQL
 
         public void OnAwake()
         {
+            string userName = "onelei";
             sqlDatas.Clear();
-            sqlDatas.Add(ESqlType.Player, new SqlPlayerData(string.Empty));
+            sqlDatas.Add(ESqlType.Player, new SqlPlayerData(userName));
+            sqlDatas.Add(ESqlType.Common, new SqlCommonData(string.Empty));
         }
 
         public void OnDestroy()
